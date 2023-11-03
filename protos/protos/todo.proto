@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package todo;
+
+
+message GetTodoByIdRequest{
+  int32 id =1;
+}
+service TodoService {
+  // Add a new todo item to the list
+  rpc GetTodo(GetTodoByIdRequest) returns (Todo);
+
+  // List all todo items
+  rpc ListTodos (ListTodosRequest) returns (ListTodosResponse);
+}
+
+message Todo {
+  int32 id = 1;
+  string title = 2;
+  string description = 3;
+  bool completed = 4;
+}
+
+message ListTodosRequest {
+  // You can add query parameters here, e.g., filtering options
+}
+
+message ListTodosResponse {
+  repeated Todo todos = 1;
+}
