@@ -8,10 +8,10 @@ message GetTodoByIdRequest{
 }
 service TodoService {
   // Add a new todo item to the list
-  rpc GetTodo(GetTodoByIdRequest) returns (Todo);
+  rpc getTodo(GetTodoByIdRequest) returns (Todo);
 
   // List all todo items
-  rpc ListTodos (ListTodosRequest) returns (ListTodosResponse);
+  // rpc ListTodos (ListTodosRequest) returns (ListTodosResponse);
 }
 
 message Todo {
@@ -21,10 +21,9 @@ message Todo {
   bool completed = 4;
 }
 
-message ListTodosRequest {
-  // You can add query parameters here, e.g., filtering options
-}
+// message ListTodosRequest {
+// }
 
-message ListTodosResponse {
-  repeated Todo todos = 1;
-}
+// message ListTodosResponse {
+//   repeated Todo todos = 1;
+// }
